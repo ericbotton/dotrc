@@ -1,5 +1,5 @@
 " An example for a vimrc file.
-"
+"source $VIMRUNTIME/vimrc_example.vim
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
 " Last change:	2011 Apr 15
 "
@@ -9,10 +9,6 @@
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
 
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -98,18 +94,40 @@ endif
 set listchars=eol:$,tab:>-,trail:>,precedes:<,trail:-
 set noexpandtab
 set linebreak
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 filetype plugin indent on
-
-" Plug !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 call plug#begin()
 Plug 'tpope/vim-sensible'
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "Plug 'scrooloose/nerdtree'
-
+" 	Plug 'bluz71/vim-nightfly-guicolors'
+" 	Plug 'preservim/nerdcommenter'
+" 	Plug 'vim-airline/vim-airline'
+" 	"Plug 'valloric/youcompleteme'
+" 	Plug 'tpope/vim-fugitive'
+ 	Plug 'tpope/vim-surround'
+" 	Plug 'vim-airline/vim-airline'
+" 	Plug 'vim-airline/vim-airline-themes'
+" 	Plug 'altercation/vim-colors-solarized'
+" 	Plug 'kien/ctrlp.vim'
+	Plug 'scrooloose/syntastic'
+	Plug 'tpope/vim-commentary'
 call plug#end()
 
 " NERDTree for dir !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
+if (has("termguicolors"))
+	set termguicolors
+endif
+syntax enable
+set background=dark
+colorscheme night-owl
+"let g:lightline = { 'colorscheme': 'nightowl' }
+
+if has("gui_win32")
+	set lines=29 columns=82
+	set guifont=Consolas:h11:cANSI
+endif
+
