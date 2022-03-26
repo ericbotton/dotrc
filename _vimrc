@@ -49,9 +49,12 @@ set shiftwidth=2
 set tabstop=2
 filetype plugin indent on
 call plug#begin('~/vimfiles/plug-vim')
-Plug 'tpope/vim-sensible'
+  Plug 'tpope/vim-sensible'
 	Plug 'haishanh/night-owl.vim'
 	Plug 'junegunn/vim-easy-align'
+  Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+  Plug 'SirVer/ultisnips'
+	Plug 'honza/vim-snippets'
 "	Plug 'itchyny/lightline.vim'
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plug 'scrooloose/nerdtree'
@@ -68,6 +71,20 @@ Plug 'tpope/vim-sensible'
 "	Plug 'kien/ctrlp.vim'
 	Plug 'scrooloose/syntastic'
 	Plug 'tpope/vim-commentary'
+"
+"   " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+"Plug 'fatih/vim-go', { 'tag': '*' }
+"
+"   " Plugin options
+"Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+"
+"   " Plugin outside ~/.vim/plugged with post-update hook
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"
+"   " Unmanaged plugin (manually installed and updated)
+"   Plug '~/my-prototype-plugin'
+"
+"   " Initialize plugin system
 call plug#end()
 
 " NERDTree for dir !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

@@ -17,11 +17,7 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file
-endif
+set nobackup		" do not keep a backup file, use versions instead
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
@@ -71,9 +67,9 @@ if has("autocmd")
   " Also don't do it when the mark is in the first line, that is the default
   " position when opening a file.
   autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+  \ if line("'\"") > 1 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
 
   augroup END
 
@@ -98,19 +94,26 @@ set shiftwidth=2
 set tabstop=2
 filetype plugin indent on
 call plug#begin()
-Plug 'tpope/vim-sensible'
-"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-"Plug 'scrooloose/nerdtree'
-" 	Plug 'bluz71/vim-nightfly-guicolors'
-" 	Plug 'preservim/nerdcommenter'
-" 	Plug 'vim-airline/vim-airline'
-" 	"Plug 'valloric/youcompleteme'
-" 	Plug 'tpope/vim-fugitive'
- 	Plug 'tpope/vim-surround'
-" 	Plug 'vim-airline/vim-airline'
-" 	Plug 'vim-airline/vim-airline-themes'
-" 	Plug 'altercation/vim-colors-solarized'
-" 	Plug 'kien/ctrlp.vim'
+  Plug 'tpope/vim-sensible'
+	Plug 'haishanh/night-owl.vim'
+	Plug 'junegunn/vim-easy-align'
+  Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+  Plug 'SirVer/ultisnips'
+	Plug 'honza/vim-snippets'
+"	Plug 'itchyny/lightline.vim'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'scrooloose/nerdtree'
+"	Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+"	Plug 'bluz71/vim-nightfly-guicolors'
+"	Plug 'preservim/nerdcommenter'
+"	Plug 'vim-airline/vim-airline'
+"	"Plug 'valloric/youcompleteme'
+"	Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-surround'
+"	Plug 'vim-airline/vim-airline'
+"	Plug 'vim-airline/vim-airline-themes'
+"	Plug 'altercation/vim-colors-solarized'
+"	Plug 'kien/ctrlp.vim'
 	Plug 'scrooloose/syntastic'
 	Plug 'tpope/vim-commentary'
 call plug#end()
